@@ -1,0 +1,12 @@
+@import 'reset/fonts';
+@import 'reset/global-reset';
+@import 'reset/container-reset';
+@import 'reset/cms-reset';
+
+
+#root {
+  background-color: #FC6B3F;
+  overflow: hidden;
+
+  height: 500vh;
+}

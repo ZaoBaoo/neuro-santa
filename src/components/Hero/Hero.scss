@@ -1,0 +1,15 @@
+#root .hero {
+  position: relative;
+  z-index: 10;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFF;
+  font-size: 120px;
+  font-weight: 900;
+  letter-spacing: -2.4px;
+}
