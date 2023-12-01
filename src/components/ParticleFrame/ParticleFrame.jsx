@@ -24,7 +24,7 @@ const motionForce = (x, y) => {
 };
 
 const ParticleFrame = () => {
-  const [entropy, setEntropy] = useState(550);
+  const [entropy, setEntropy] = useState(800);
   const [scale, setScale] = useState(1.5);
   const [srcImage, setSrcImage] = useState('https://new.technodom.kz/under/neuro-santa/particle-start.png');
 
@@ -36,7 +36,7 @@ const ParticleFrame = () => {
 
     setTimeout(() => {
       setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-2.png');
-      setEntropy(550);
+      setEntropy(800);
       setScale(1.5);
     }, 6000);
 
@@ -44,50 +44,50 @@ const ParticleFrame = () => {
       setEntropy(60);
       setScale(1.2);
     }, 8000);
-    //
-    // setTimeout(() => {
-    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-3.png');
-    //   setEntropy(550);
-    //   setScale(1.5);
-    // }, 12000);
-    //
-    // setTimeout(() => {
-    //   setEntropy(20);
-    //   setScale(1.2);
-    // }, 14000);
-    //
-    // setTimeout(() => {
-    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-start.png');
-    //   setEntropy(550);
-    //   setScale(1.5);
-    // }, 18000);
-    //
-    // setTimeout(() => {
-    //   setEntropy(20);
-    //   setScale(1.2);
-    // }, 20000);
-    //
-    // setTimeout(() => {
-    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-2.png');
-    //   setEntropy(550);
-    //   setScale(1.5);
-    // }, 24000);
-    //
-    // setTimeout(() => {
-    //   setEntropy(20);
-    //   setScale(1.2);
-    // }, 22000);
-    //
-    // setTimeout(() => {
-    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-3.png');
-    //   setEntropy(550);
-    //   setScale(1.5);
-    // }, 26000);
-    //
-    // setTimeout(() => {
-    //   setEntropy(20);
-    //   setScale(1.2);
-    // }, 28000);
+
+    setTimeout(() => {
+      setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-3.png');
+      setEntropy(800);
+      setScale(1.5);
+    }, 12000);
+
+    setTimeout(() => {
+      setEntropy(60);
+      setScale(1.2);
+    }, 14000);
+
+    setTimeout(() => {
+      setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-start.png');
+      setEntropy(800);
+      setScale(1.5);
+    }, 18000);
+
+    setTimeout(() => {
+      setEntropy(60);
+      setScale(1.2);
+    }, 20000);
+
+    setTimeout(() => {
+      setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-2.png');
+      setEntropy(800);
+      setScale(1.5);
+    }, 24000);
+
+    setTimeout(() => {
+      setEntropy(60);
+      setScale(1.2);
+    }, 22000);
+
+    setTimeout(() => {
+      setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-3.png');
+      setEntropy(800);
+      setScale(1.5);
+    }, 26000);
+
+    setTimeout(() => {
+      setEntropy(60);
+      setScale(1.2);
+    }, 28000);
   }, []);
 
   return (
