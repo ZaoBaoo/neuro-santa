@@ -1,0 +1,84 @@
+#root .buttonRipple {
+  --width: 100%;
+  --time: 0.7s;
+
+  border: none;
+  font-family: inherit;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  color: white;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #FFF;
+  box-shadow: 0 5px 52px 0 #FFFBD4;
+  padding: 25px 48px;
+  transition: box-shadow 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+  &_disabled {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .buttonRipple__text {
+    color: #FC6B3F;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.48px;
+
+    position: relative;
+    z-index: 5;
+    transition: color var(--time);
+  }
+
+  &:hover {
+    box-shadow: 0 5px 52px 0 #FFC700;
+  }
+
+  &:hover .buttonRipple__text {
+    color: #fff;
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    content: "";
+    z-index: 0;
+    width: 0;
+    height: 0;
+
+    border-radius: 100%;
+    background: linear-gradient(94deg, #FFC93D 0%, #FFA800 100%);
+
+    transform: translate(-50%, -50%);
+    transition: width var(--time), padding-top var(--time);
+  }
+
+  &:hover span {
+    width: calc(var(--width) * 2.25);
+    padding-top: calc(var(--width) * 2.25);
+  }
+
+  &.FLASH {
+    &:hover .buttonRipple__text {
+      color: white;
+    }
+
+    span {
+      background: #ff3b3b;
+    }
+  }
+
+  &.animated {
+    --angle: 5deg;
+    animation: shake 0.3s;
+  }
+}
+
+.link {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 1rem;
+}

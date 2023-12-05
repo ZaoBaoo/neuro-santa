@@ -1,27 +1,36 @@
 #root .particleFrame {
   position: relative;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
   &__particle {
-
+    //width: 100%;
+    //height: auto;
   }
 
-  &__button {
-    border-radius: 24px;
-    background: #FFF;
-    box-shadow: 0 5px 52px 0 #FFFBD4;
-    padding: 25px 48px;
-    color: #FC6B3F;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.48px;
-    border: none;
-
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-    cursor: pointer;
+  &__wrapper-btn {
+    text-align: center;
+    margin-top: -140px;
   }
+
+  //&__button {
+  //  border-radius: 24px;
+  //  background: #FFF;
+  //  box-shadow: 0 5px 52px 0 #FFFBD4;
+  //  padding: 25px 48px;
+  //  color: #FC6B3F;
+  //  font-size: 24px;
+  //  font-weight: 700;
+  //  letter-spacing: -0.48px;
+  //  border: none;
+  //
+  //  position: absolute;
+  //  bottom: 0;
+  //  left: 50%;
+  //  transform: translateX(-50%);
+  //
+  //  cursor: pointer;
+  //}
 }
