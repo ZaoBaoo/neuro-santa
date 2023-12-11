@@ -3,10 +3,19 @@
 @import 'reset/container-reset';
 @import 'reset/cms-reset';
 
-
 #root {
   background-color: #FC6B3F;
   overflow: hidden;
 
   height: 500vh;
+
+  @media (max-width: 700px) {
+    background-image: url("https://www.technodom.kz/under/neuro-santa/bg-mobile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
 }

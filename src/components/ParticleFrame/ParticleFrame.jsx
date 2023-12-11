@@ -2,6 +2,12 @@ import './ParticleFrame.scss';
 import React, { useEffect, useState } from 'react';
 import ParticleImage, { Vector, forces } from 'react-particle-image';
 import { ButtonRipple } from '../ButtonRipple/ButtonRipple.jsx';
+import { useSelector } from 'react-redux';
+
+const size = {
+  height: window.innerWidth > 700 ? '500' : '500',
+  width: window.innerWidth > 700 ? '500' : '500',
+};
 
 const particleOptions = {
   filter: ({ x, y, image }) => {
@@ -12,7 +18,7 @@ const particleOptions = {
   },
   color: ({ x, y, image }) => '#fff',
   radius: () => Math.random() * 1.5 + 0.5,
-  mass: () => 40,
+  mass: () => 30,
   friction: () => 0.15,
   initialPosition: ({ canvasDimensions }) => {
     return new Vector(canvasDimensions.width / 2, canvasDimensions.height / 2);
@@ -23,73 +29,88 @@ const motionForce = (x, y) => {
   return forces.disturbance(x, y, 30);
 };
 
-const ParticleFrame = ({ handlerNextProduct }) => {
-  const [entropy, setEntropy] = useState(800);
-  const [scale, setScale] = useState(1.2);
+const ParticleFrame = () => {
+  const [entropy, setEntropy] = useState(600);
+  const [scale, setScale] = useState(1.5);
   const [srcImage, setSrcImage] = useState(
-    'https://new.technodom.kz/under/neuro-santa/particle-start.png',
+    'https://new.technodom.kz/under/neuro-santa/particle-placeholder.png',
   );
 
+  const { currentProduct } = useSelector((state) => state.promocodesData);
+
   useEffect(() => {
-    setTimeout(() => {
-      setEntropy(60);
-      setScale(1.2);
-    }, 2000);
+    if (currentProduct) {
+      setTimeout(() => {
+        const category = currentProduct['categories'][0];
+
+        productMatches.forEach((part) => {});
+
+        setEntropy(60);
+        setScale(1.4);
+      }, 500);
+    }
+  }, [currentProduct]);
+
+  useEffect(() => {
+    // setTimeout(() => {
+    //   setEntropy(60);
+    //   setScale(1.4);
+    // }, 2000);
     //
     // setTimeout(() => {
     //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-2.png');
-    //   setEntropy(800);
+    //   setEntropy(600);
     //   setScale(1.5);
-    // }, 6000);
+    // }, 4000);
     //
     // setTimeout(() => {
     //   setEntropy(60);
-    //   setScale(1.2);
-    // }, 8000);
+    //   setScale(1.4);
+    // }, 6000);
     //
     // setTimeout(() => {
     //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-3.png');
-    //   setEntropy(800);
+    //   setEntropy(600);
+    //   setScale(1.5);
+    // }, 8000);
+    //
+    // setTimeout(() => {
+    //   setEntropy(60);
+    //   setScale(1.4);
+    // }, 10000);
+    //
+    // setTimeout(() => {
+    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-start.png');
+    //   setEntropy(600);
     //   setScale(1.5);
     // }, 12000);
     //
     // setTimeout(() => {
     //   setEntropy(60);
-    //   setScale(1.2);
+    //   setScale(1.4);
     // }, 14000);
     //
     // setTimeout(() => {
-    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-start.png');
-    //   setEntropy(800);
+    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-2.png');
+    //   setEntropy(600);
     //   setScale(1.5);
+    // }, 16000);
+    //
+    // setTimeout(() => {
+    //   setEntropy(60);
+    //   setScale(1.4);
     // }, 18000);
     //
     // setTimeout(() => {
-    //   setEntropy(60);
-    //   setScale(1.2);
+    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-3.png');
+    //   setEntropy(600);
+    //   setScale(1.5);
     // }, 20000);
     //
     // setTimeout(() => {
-    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-2.png');
-    //   setEntropy(800);
-    //   setScale(1.5);
-    // }, 24000);
-    //
-    // setTimeout(() => {
     //   setEntropy(60);
-    //   setScale(1.2);
-    // }, 26000);
-    //
-    // setTimeout(() => {
-    //   setSrcImage('https://new.technodom.kz/under/neuro-santa/particle-3.png');
-    //   setEntropy(800);
-    //   setScale(1.5);
-    // }, 30000);
-    //
-    // setTimeout(() => {
-    //   setEntropy(60);
-    //   setScale(1.2);
-    // }, 32000);
+    //   setScale(1.4);
+    // }, 22000);
   }, []);
 
   return (
@@ -107,9 +128,6 @@ const ParticleFrame = ({ handlerNextProduct }) => {
         width="1000"
         height="1000"
       />
-      <div className="particleFrame__wrapper-btn">
-        <ButtonRipple text="Хочу волшебство!" handlerNextProduct={handlerNextProduct} />
-      </div>
     </div>
   );
 };

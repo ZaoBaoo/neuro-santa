@@ -12,10 +12,6 @@ const CardBase = ({ data, handlerNextProduct }) => {
     setIsLoadedImage(true);
   };
 
-  useEffect(() => {
-    setIsLoadedImage(false);
-  }, [image]);
-
   return (
     <div className={`card ${isLoadedImage && 'card_show'}`}>
       <div className="card__wrapper-content">
@@ -25,13 +21,17 @@ const CardBase = ({ data, handlerNextProduct }) => {
           <ButtonCopy />
         </div>
 
-        <p className="card__description">{title}</p>
+        <div className="card__wrapper-image">
+          <img className="card__image" src={image} onLoad={handleLoad} alt="" />
+        </div>
 
         <div className="card__wrapper-price">
           <div className="card__description-price">
             <span className="card__text-price">Цена по промокоду:</span>
-            <span className="card__current-price">{formatNumber(newPrice)} ₸</span>
-            <span className="card__old-price">{formatNumber(oldPrice)} ₸</span>
+            <div className="card__footer-price">
+              <span className="card__current-price">{formatNumber(newPrice)} ₸</span>
+              <span className="card__old-price">{formatNumber(oldPrice)} ₸</span>
+            </div>
           </div>
 
           <div className="card__wrapper-discount">
@@ -40,17 +40,11 @@ const CardBase = ({ data, handlerNextProduct }) => {
           </div>
         </div>
 
-        <div className="card__wrapper-buttons">
-          <a className="card__link" href={`https://www.technodom.kz/p/${uri}`} target="_blank">
-            К товару
-          </a>
-          <button className="card__button-action" onClick={handlerNextProduct}>
-            Испытать волшебство ещё раз
-          </button>
-        </div>
-      </div>
-      <div className="card__wrapper-image">
-        <img className="card__image" src={image} onLoad={handleLoad} alt="" />
+        <p className="card__description">{title}</p>
+
+        <a className="card__link" href={`https://www.technodom.kz/p/${uri}`} target="_blank">
+          К товару
+        </a>
       </div>
     </div>
   );

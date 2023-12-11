@@ -1,0 +1,46 @@
+#root .cardGreeting {
+  background-color: #FC6B3F;
+  margin-top: 64px;
+  padding: 18px;
+  border-radius: 16px;
+  box-shadow: 0 2px 28px 0 #FFE1B5;
+  display: none;
+  position: relative;
+
+  @media (max-width: 700px) {
+    display: block;
+  }
+
+  &__title {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.36px;
+
+    max-width: 169px;
+  }
+
+  &__text {
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.28px;
+
+    max-width: 131px;
+
+    margin-top: 12px;
+  }
+
+  &__wrapper-btn {
+    margin-top: 16px;
+  }
+
+  &__image {
+    display: block;
+    width: auto;
+    height: 262px;
+    position: absolute;
+    bottom: -40px;
+    right: -12px;
+  }
+}

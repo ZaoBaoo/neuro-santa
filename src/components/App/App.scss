@@ -1,31 +1,5 @@
 #root .app {
-  position: relative;
-  height: 100%;
-
-  &__orbit-decor {
-    position: absolute;
-    top: 900px;
-    left: -20px;
-    width: 1920px;
-    height: 966px;
-    z-index: 0;
-
-    animation: center 240s linear infinite;
-
-    background-image: url("https://new.technodom.kz/under/neuro-santa/orbit-5.png");
-
-    @keyframes center {
-      0% {
-        transform: scale(1.2) rotate(540deg) translateX(0) rotate(540deg);
-      }
-
-      50% {
-        transform: scale(0.75) rotate(360deg) translateX(0) rotate(360deg);
-      }
-
-      100% {
-        transform: scale(1.2) rotate(180deg) translateX(0) rotate(180deg);
-      }
-    }
+  &__scroll-point {
+    scroll-margin-top: 250px;
   }
 }

@@ -6,7 +6,7 @@ const ButtonRipple = ({ text, flash, handlerNextProduct }) => {
   const [isClick, setIsClick] = useState(false);
 
   const handlerClick = () => {
-    setIsClick(true);
+    // setIsClick(true);
     handlerNextProduct();
   };
 
@@ -47,7 +47,7 @@ const ButtonRipple = ({ text, flash, handlerNextProduct }) => {
       }`}
       onMouseOver={handleHover}
       onMouseOut={handleMouseOut}
-      onClick={handlerClick}
+      onClick={(() => {}) && handlerClick}
     >
       <span></span>
       <div className="buttonRipple__text">{text}</div>
