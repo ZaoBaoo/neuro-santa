@@ -9,7 +9,9 @@ const CardBase = ({ data, handlerNextProduct }) => {
   const { sku, title, promocode, newPrice, oldPrice, image, discountPercentage, uri } = data;
 
   const handleLoad = () => {
-    setIsLoadedImage(true);
+    setTimeout(() => {
+      setIsLoadedImage(true);
+    }, 0);
   };
 
   return (

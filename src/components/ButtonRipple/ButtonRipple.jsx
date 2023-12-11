@@ -1,12 +1,14 @@
-import { useState } from 'react';
 import './ButtonRipple.scss';
+import { useState } from 'react';
 
-const ButtonRipple = ({ text, flash, handlerNextProduct }) => {
+const ButtonRipple = ({ flash, handlerNextProduct }) => {
   const [isAnimated, setAnimated] = useState(false);
   const [isClick, setIsClick] = useState(false);
+  const [text, setText] = useState('Хочу волшебство!');
 
   const handlerClick = () => {
     // setIsClick(true);
+    setText('Повторить ');
     handlerNextProduct();
   };
 

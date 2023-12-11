@@ -21,6 +21,7 @@ export const PromocodesSlice = createSlice({
       state.productsRequest = payload;
     },
     setCurrentProductAction: (state, { payload }) => {
+      console.log(payload['categories'][0]);
       state.currentProduct = payload;
     },
   },

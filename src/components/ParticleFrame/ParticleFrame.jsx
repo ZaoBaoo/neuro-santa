@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import ParticleImage, { Vector, forces } from 'react-particle-image';
 import { ButtonRipple } from '../ButtonRipple/ButtonRipple.jsx';
 import { useSelector } from 'react-redux';
+import { findImageByCategory } from '../../utils/findImageByCategory.js';
+import { productMatches } from '../../data/productMatches.js';
 
 const size = {
   height: window.innerWidth > 700 ? '500' : '500',
@@ -33,22 +35,25 @@ const ParticleFrame = () => {
   const [entropy, setEntropy] = useState(600);
   const [scale, setScale] = useState(1.5);
   const [srcImage, setSrcImage] = useState(
-    'https://new.technodom.kz/under/neuro-santa/particle-placeholder.png',
+    'https://new.technodom.kz/under/neuro-santa/particle-start.png',
   );
 
   const { currentProduct } = useSelector((state) => state.promocodesData);
 
   useEffect(() => {
     if (currentProduct) {
-      setTimeout(() => {
-        const category = currentProduct['categories'][0];
+      const category = currentProduct['categories'][0];
 
-        productMatches.forEach((part) => {});
+      const image = findImageByCategory(productMatches, category);
 
-        setEntropy(60);
-        setScale(1.4);
-      }, 500);
+      setEntropy(600);
+      setSrcImage(image);
     }
+
+    setTimeout(() => {
+      setEntropy(60);
+      setScale(1.4);
+    }, 1500);
   }, [currentProduct]);
 
   useEffect(() => {

@@ -11,11 +11,21 @@ const isMobile = window.innerWidth < 700;
 
 const Hero = ({ handlerNextProduct }) => {
   const [isDed, setIsDed] = useState(true);
+  const [product, setProduct] = useState(null);
   const { currentProduct, products, cityId } = useSelector((state) => state.promocodesData);
 
   useEffect(() => {
     if (currentProduct) {
       setIsDed(false);
+    }
+  }, [currentProduct]);
+
+  useEffect(() => {
+    setProduct(null);
+    if (currentProduct) {
+      setTimeout(() => {
+        setProduct(currentProduct);
+      }, 2000);
     }
   }, [currentProduct]);
 
@@ -46,13 +56,11 @@ const Hero = ({ handlerNextProduct }) => {
               alt=""
             />
             <div className="hero__wrapper-btn">
-              <ButtonRipple text="Повторить" handlerNextProduct={handlerNextProduct} flash />
+              <ButtonRipple handlerNextProduct={handlerNextProduct} flash />
             </div>
           </div>
 
-          {currentProduct && !isMobile && (
-            <Card data={currentProduct} handlerNextProduct={handlerNextProduct} />
-          )}
+          {product && !isMobile && <Card data={product} handlerNextProduct={handlerNextProduct} />}
         </div>
       </div>
     </div>
