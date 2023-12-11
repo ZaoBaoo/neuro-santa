@@ -1,20 +1,26 @@
 import './CardMobile.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import { ButtonCopy } from '../ButtonCopy/ButtonCopy.jsx';
 import { formatNumber } from '../../utils/formatNumber.js';
-import { withFade } from '../../hocs/withFade.jsx';
 
 const CardMobile = ({ data }) => {
+  const [isLoadedImage, setIsLoadedImage] = useState(false);
   const { sku, title, promocode, newPrice, oldPrice, image, discountPercentage, uri } = data;
 
+  const handleLoad = () => {
+    setTimeout(() => {
+      setIsLoadedImage(true);
+    }, 0);
+  };
+
   return (
-    <div className="cardMobile">
+    <div className={`cardMobile ${isLoadedImage && 'cardMobile_show'}`}>
       <div className="cardMobile__left">
         <h2 className="cardMobile__title">Ву-а-ля, магия! Твой промокод:</h2>
 
         <div className="cardMobile__promocode-wrapper">
           <span className="cardMobile__promocode">{promocode}</span>
-          <ButtonCopy />
+          <ButtonCopy promocode={promocode} />
         </div>
 
         <div className="cardMobile__wrapper-price">
@@ -34,7 +40,7 @@ const CardMobile = ({ data }) => {
       </div>
 
       <div className="cardMobile__right">
-        <img className="cardMobile__image" src={image} alt="" />
+        <img className="cardMobile__image" src={image} onLoad={handleLoad} alt="" />
         <p className="cardMobile__title-card">{title}</p>
         <a className="cardMobile__link" href={`https://www.technodom.kz/p/${uri}`}>
           К товару

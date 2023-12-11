@@ -16,6 +16,8 @@ export const productMatches = [
       'jelektrosamokaty',
       'kombo-ustrojstva-gibridy',
       'smart-chasy',
+      'mobil-nye-telefony',
+      'fitnes-braslety',
     ],
   },
   {

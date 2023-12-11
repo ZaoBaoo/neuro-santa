@@ -22,6 +22,7 @@ const Hero = ({ handlerNextProduct }) => {
 
   useEffect(() => {
     setProduct(null);
+
     if (currentProduct) {
       setTimeout(() => {
         setProduct(currentProduct);

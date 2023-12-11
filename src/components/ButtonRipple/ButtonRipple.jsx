@@ -4,12 +4,17 @@ import { useState } from 'react';
 const ButtonRipple = ({ flash, handlerNextProduct }) => {
   const [isAnimated, setAnimated] = useState(false);
   const [isClick, setIsClick] = useState(false);
-  const [text, setText] = useState('Хочу волшебство!');
+  const [isButtonPress, setIsButtonPress] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const handlerClick = () => {
-    // setIsClick(true);
-    setText('Повторить ');
+    setIsButtonPress(true);
     handlerNextProduct();
+
+    setIsButtonDisabled(true);
+    setTimeout(() => {
+      setIsButtonDisabled(false);
+    }, 4000);
   };
 
   const handleHover = (e) => {
@@ -44,15 +49,16 @@ const ButtonRipple = ({ flash, handlerNextProduct }) => {
 
   return (
     <button
-      className={`buttonRipple ${flash ? 'FLASH' : ''} ${isAnimated ? 'animated' : ''} ${
-        isClick ? 'buttonRipple_disabled' : ''
-      }`}
+      className={`buttonRipple ${flash ? 'FLASH' : ''} ${isAnimated ? 'animated' : ''}`}
       onMouseOver={handleHover}
       onMouseOut={handleMouseOut}
-      onClick={(() => {}) && handlerClick}
+      onClick={handlerClick}
+      disabled={isButtonDisabled}
     >
       <span></span>
-      <div className="buttonRipple__text">{text}</div>
+      <div className={`buttonRipple__text ${isButtonPress ? 'buttonRipple__text_magic' : ''}`}>
+        {isButtonPress ? 'Повторить ' : 'Хочу волшебство! '}
+      </div>
     </button>
   );
 };

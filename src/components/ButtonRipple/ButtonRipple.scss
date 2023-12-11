@@ -23,9 +23,8 @@
 
   }
 
-  &_disabled {
-    opacity: 0;
-    visibility: hidden;
+  &:disabled {
+    cursor: not-allowed;
   }
 
   .buttonRipple__text {
@@ -36,19 +35,28 @@
 
     position: relative;
     z-index: 5;
-    transition: all var(--time);
+    transition: color var(--time);
     display: flex;
     align-items: center;
     gap: 8px;
 
-    &:before {
-      content: '';
-      display: block;
-      width: 30px;
-      height: 26px;
-      background-image: url("https://www.technodom.kz/under/neuro-santa/magic-icon-orange.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
+    &_magic {
+      &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 26px;
+        background-image: url("https://www.technodom.kz/under/neuro-santa/magic-icon-orange.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        transition: background-image var(--time);
+
+        @media (max-width: 700px) {
+          width: 16px;
+          height: 14px;
+        }
+      }
     }
 
     @media (max-width: 700px) {
@@ -62,9 +70,11 @@
 
   &:hover .buttonRipple__text {
     color: #fff;
+  }
 
+  &:hover .buttonRipple__text_magic {
     &:before {
-      background-image: url("https://www.technodom.kz/under/neuro-santa/.svg");
+      background-image: url("https://www.technodom.kz/under/neuro-santa/magic-icon-white.svg");
     }
   }
 

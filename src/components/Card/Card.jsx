@@ -2,9 +2,9 @@ import './Card.scss';
 import { formatNumber } from '../../utils/formatNumber.js';
 import { ButtonCopy } from '../ButtonCopy/ButtonCopy.jsx';
 import { withFade } from '../../hocs/withFade.jsx';
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useState } from 'react';
 
-const CardBase = ({ data, handlerNextProduct }) => {
+const CardBase = ({ data }) => {
   const [isLoadedImage, setIsLoadedImage] = useState(false);
   const { sku, title, promocode, newPrice, oldPrice, image, discountPercentage, uri } = data;
 
@@ -20,7 +20,7 @@ const CardBase = ({ data, handlerNextProduct }) => {
         <h2 className="card__title">Ву-а-ля, магия! Твой промокод:</h2>
         <div className="card__promocode-control">
           <span className="card__promocode-inner">{promocode}</span>
-          <ButtonCopy />
+          <ButtonCopy promocode={promocode} />
         </div>
 
         <div className="card__wrapper-image">

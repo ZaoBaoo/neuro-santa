@@ -16,6 +16,10 @@
   max-width: 409px;
   margin-top: -70px;
 
+  @media (max-width: 1150px) {
+      margin-top: 50px;
+  }
+
   &_show {
     opacity: 1;
   }

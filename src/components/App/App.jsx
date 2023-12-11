@@ -1,5 +1,5 @@
 import './App.scss';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Components
@@ -18,11 +18,15 @@ import { CardGreeting } from '../CardGreeting/CardGreeting.jsx';
 const isMobile = window.innerWidth < 700;
 
 function App() {
+  const [product, setProduct] = useState(null);
+  const [isFirstRender, setIsFirstRender] = useState(true);
   const { currentProduct, products, cityId } = useSelector((state) => state.promocodesData);
 
   const dispatch = useDispatch();
 
   const handlerNextProduct = () => {
+    setIsFirstRender(false);
+
     if (products?.length === 0) {
       dispatch(getProducts(cityId));
       return;
@@ -30,30 +34,29 @@ function App() {
 
     const { item, newProducts } = slicingProducts(products);
 
-    // console.log(item['categories']);
-
     dispatch(setCurrentProductAction(item));
     dispatch(getProductsAction(newProducts));
   };
 
-  // useEffect(() => {
-  //   if (currentProduct) {
-  //     scrollToBlock('.app__scroll-point');
-  //   }
-  // }, [currentProduct]);
+  useEffect(() => {
+    setProduct(null);
+
+    if (currentProduct) {
+      setTimeout(() => {
+        setProduct(currentProduct);
+      }, 2000);
+    }
+  }, [currentProduct]);
 
   return (
     <div className="app">
       <Hero handlerNextProduct={handlerNextProduct} />
-
-      {/*<div className="app__scroll-point" />*/}
-
       <Container>
-        {currentProduct && isMobile && (
-          <CardMobile data={currentProduct} handlerNextProduct={handlerNextProduct} />
+        {product && isMobile && (
+          <CardMobile data={product} handlerNextProduct={handlerNextProduct} />
         )}
 
-        <CardGreeting />
+        {isFirstRender && <CardGreeting />}
       </Container>
     </div>
   );
