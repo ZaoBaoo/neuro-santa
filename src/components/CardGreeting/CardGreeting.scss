@@ -4,12 +4,7 @@
   padding: 18px;
   border-radius: 16px;
   box-shadow: 0 2px 28px 0 #FFE1B5;
-  display: none;
   position: relative;
-
-  @media (max-width: 700px) {
-    display: block;
-  }
 
   &__title {
     color: #FFF;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // Components
 import { Hero } from '../Hero/Hero.jsx';
-import { Container } from '../Container/Container.jsx';
+import { InnerCards } from '../InnerCards/InnerCards.jsx';
 import { CardMobile } from '../CardMobile/CardMobile.jsx';
 import { CardGreeting } from '../CardGreeting/CardGreeting.jsx';
 import { LightBulbs } from '../LightBulbs/LightBulbs.jsx';
@@ -17,6 +17,7 @@ import { getProducts } from '../../store/actions/promocodes.js';
 import { slicingProducts } from '../../utils/slicingProducts.js';
 import { getProductsAction, setCurrentProductAction } from '../../store/reducers/promocodes.js';
 import { Kaspi } from '../Kaspi/Kaspi.jsx';
+import { getCookie } from '../../utils/getCookies.js';
 
 const isMobile = window.innerWidth < 700;
 
@@ -28,6 +29,11 @@ function App() {
   const dispatch = useDispatch();
 
   const handlerNextProduct = () => {
+    if (!getCookie('accessToken')) {
+      window.signInHelper && window.signInHelper();
+      return;
+    }
+
     setIsFirstRender(false);
 
     if (products?.length === 0) {
@@ -54,13 +60,14 @@ function App() {
   return (
     <div className="app">
       <Hero handlerNextProduct={handlerNextProduct} />
-      <Container>
-        {product && isMobile && (
-          <CardMobile data={product} handlerNextProduct={handlerNextProduct} />
-        )}
 
-        {isFirstRender && <CardGreeting />}
-      </Container>
+      {isMobile && (
+        <InnerCards>
+          {product && <CardMobile data={product} handlerNextProduct={handlerNextProduct} />}
+
+          {isFirstRender && <CardGreeting handlerNextProduct={handlerNextProduct} />}
+        </InnerCards>
+      )}
 
       <Toys />
 

@@ -7,8 +7,6 @@
   gap: 20px;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
-
-  margin-top: 64px;
   display: none;
 
   @media (max-width: 700px) {
@@ -98,6 +96,21 @@
     line-height: 100%;
     font-family: 'Museo', serif;
     font-size: 16px;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 9px;
+      height: 18px;
+      background-image: url("https://www.technodom.kz/under/neuro-santa/icon-t-black.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
   }
 
   &__old-price {
@@ -107,6 +120,21 @@
     font-family: 'Museo', serif;
     opacity: 0.5;
     font-size: 12px;
+
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 14px;
+      background-image: url("https://www.technodom.kz/under/neuro-santa/icon-t-gray.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+    }
   }
 
   &__wrapper-discount {

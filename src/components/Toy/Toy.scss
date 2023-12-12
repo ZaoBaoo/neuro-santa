@@ -1,7 +1,7 @@
 #root .toy {
   display: flex;
   flex-direction: column;
-  gap: 0.83vw;
+  gap: 4.44vw;
   align-items: center;
 
   &__wrapper {
@@ -14,6 +14,16 @@
 
       .toy__decor-active {
         opacity: 1;
+      }
+    }
+
+    @media (max-width: 700px) {
+      &:hover {
+        transform: translateY(0) scale(1.1);
+
+        .toy__decor-active {
+          opacity: 1;
+        }
       }
     }
   }
@@ -48,6 +58,10 @@
     font-size: 28px;
     font-weight: 900;
     letter-spacing: -0.577px;
+
+    @media (max-width: 700px) {
+      font-size: 12px;
+    }
 
     //max-width: 11.45vw;
   }

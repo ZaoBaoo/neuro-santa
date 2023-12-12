@@ -3,6 +3,10 @@
   width: 100vw;
   height: 24vw;
 
+  @media (max-width: 700px) {
+      margin-top: 24px;
+  }
+
   &_action {
     .lightBulbs__light-active {
       opacity: 1;

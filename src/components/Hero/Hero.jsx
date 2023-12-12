@@ -57,7 +57,9 @@ const Hero = ({ handlerNextProduct }) => {
               alt=""
             />
             <div className="hero__wrapper-btn">
-              <ButtonRipple handlerNextProduct={handlerNextProduct} flash />
+              {(isMobile && !currentProduct) || (
+                <ButtonRipple handlerNextProduct={handlerNextProduct} flash />
+              )}
             </div>
           </div>
 

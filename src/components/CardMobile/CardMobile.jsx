@@ -27,8 +27,8 @@ const CardMobile = ({ data }) => {
           <div className="cardMobile__description-price">
             <span className="cardMobile__text-price">Цена по промокоду:</span>
             <div className="cardMobile__footer-price">
-              <span className="cardMobile__current-price">{formatNumber(newPrice)} ₸</span>
-              <span className="cardMobile__old-price">{formatNumber(oldPrice)} ₸</span>
+              <span className="cardMobile__current-price">{formatNumber(newPrice)}</span>
+              <span className="cardMobile__old-price">{formatNumber(oldPrice)}</span>
             </div>
           </div>
 

@@ -11,7 +11,7 @@ const PromoSale = () => {
               <p className="promoSale__text">
                 Скидки до 70% и рассрочка до 0-0-24 на желанную технику
               </p>
-              <a className="promoSale__link" href="#">
+              <a className="promoSale__link" href="https://www.technodom.kz/cms/sale">
                 Подробнее
               </a>
             </div>

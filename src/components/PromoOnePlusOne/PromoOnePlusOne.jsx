@@ -18,7 +18,10 @@ const PromoOnePlusOne = () => {
               <p className="promoOnePlusOne__text">
                 Техника со скидками до 70%, с подарками за покупки и в рассрочку 0-0-24!
               </p>
-              <a className="promoOnePlusOne__link" href="#">
+              <a
+                className="promoOnePlusOne__link"
+                href="https://www.technodom.kz/cms/promo/trojnaja-vygoda"
+              >
                 Подробнее
               </a>
             </div>
