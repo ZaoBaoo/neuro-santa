@@ -1,7 +1,7 @@
 export const productMatches = [
   {
     image: 'https://new.technodom.kz/under/neuro-santa/particle-tv.png',
-    categories: ['led-televizory', 'televizory-ot-61-djujmov'],
+    categories: ['led-televizory', 'televizory-ot-61-djujmov', 'televizory-ot-51-do-60-djujmov'],
   },
   {
     image: 'https://new.technodom.kz/under/neuro-santa/particle-laptop.png',
@@ -30,6 +30,7 @@ export const productMatches = [
       'stiral-nye-mashiny',
       'kondicionery',
       'indukcionnye-poverhnosti',
+      'kondicionery-7000-9000-btu',
     ],
   },
   {

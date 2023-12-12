@@ -1,0 +1,13 @@
+#root .toys {
+  display: grid;
+
+  grid-template-columns: repeat(3, 17.39vw);
+  gap: 2.91vw;
+  justify-content: center;
+
+  background-image: url("https://www.technodom.kz/under/neuro-santa/toys-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  margin-top: 50px;
+}

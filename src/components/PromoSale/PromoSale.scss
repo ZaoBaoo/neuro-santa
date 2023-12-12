@@ -1,0 +1,81 @@
+#root .promoSale {
+  height: 820px;
+
+  background-image: url("https://www.technodom.kz/under/neuro-santa/promo-1-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    max-width: 1524px;
+    padding: 15px;
+    margin: 0 auto;
+    height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    gap: 48px;
+  }
+
+  &__right {
+
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__left {
+    flex-shrink: 0;
+    flex-basis: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__wrapper-text {
+    max-width: 450px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  &__title {
+    color: #FFF;
+    font-size: 60px;
+    font-weight: 900;
+    line-height: 110%;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  &__link {
+    color: #FC6B3F;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.44px;
+
+    padding: 24px 46px;
+    border-radius: 24px;
+    background: #FFF;
+    box-shadow: 0 5px 24px 0 #FFCD83;
+    text-decoration: none;
+    transition: opacity 0.25s ease-in-out;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

@@ -3,10 +3,11 @@
   background-image: url("https://www.technodom.kz/under/neuro-santa/hero-bg-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-  transition: background-image 1s ease-in-out;
+  background-position: center center, center center;
+  transition: background 1s ease-in-out;
 
   &_ded {
+    background-position: center right -50px, center center;
     background-image: url("https://www.technodom.kz/under/neuro-santa/hero-bg-ded-desktop.png"), url("https://www.technodom.kz/under/neuro-santa/hero-bg-desktop.png");
   }
 

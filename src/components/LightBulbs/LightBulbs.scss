@@ -1,5 +1,7 @@
 #root .lightBulbs {
   position: relative;
+  width: 100vw;
+  height: 24vw;
 
   &_action {
     .lightBulbs__light-active {
@@ -20,7 +22,7 @@
     background-repeat: no-repeat;
     background-position: center center;
 
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
   }
 
   &__light-active {

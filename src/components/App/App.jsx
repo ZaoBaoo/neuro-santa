@@ -4,17 +4,19 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // Components
 import { Hero } from '../Hero/Hero.jsx';
-import Card from '../Card/Card.jsx';
 import { Container } from '../Container/Container.jsx';
+import { CardMobile } from '../CardMobile/CardMobile.jsx';
+import { CardGreeting } from '../CardGreeting/CardGreeting.jsx';
+import { LightBulbs } from '../LightBulbs/LightBulbs.jsx';
+import { Toys } from '../Toys/Toys.jsx';
+import { PromoSale } from '../PromoSale/PromoSale.jsx';
+import { PromoOnePlusOne } from '../PromoOnePlusOne/PromoOnePlusOne.jsx';
 
 // Store
 import { getProducts } from '../../store/actions/promocodes.js';
 import { slicingProducts } from '../../utils/slicingProducts.js';
 import { getProductsAction, setCurrentProductAction } from '../../store/reducers/promocodes.js';
-import { scrollToBlock } from '../../utils/scrollToBlock.js';
-import { CardMobile } from '../CardMobile/CardMobile.jsx';
-import { CardGreeting } from '../CardGreeting/CardGreeting.jsx';
-import { LightBulbs } from '../LightBulbs/LightBulbs.jsx';
+import { Kaspi } from '../Kaspi/Kaspi.jsx';
 
 const isMobile = window.innerWidth < 700;
 
@@ -60,7 +62,17 @@ function App() {
         {isFirstRender && <CardGreeting />}
       </Container>
 
+      <Toys />
+
       <LightBulbs />
+
+      <PromoSale />
+
+      <PromoOnePlusOne />
+
+      <LightBulbs />
+
+      <Kaspi />
     </div>
   );
 }

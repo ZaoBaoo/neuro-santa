@@ -1,0 +1,54 @@
+#root .toy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.83vw;
+  align-items: center;
+
+  &__wrapper {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-25px);
+
+      .toy__decor-active {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__decor-active {
+    width: 15.9vw;
+    height: 11.1vw;
+
+    background-image: url("https://www.technodom.kz/under/neuro-santa/toy-active.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: opacity 0.25s ease-in-out;
+
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    opacity: 0;
+  }
+
+  &__text {
+    color: #FFF;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.577px;
+
+    //max-width: 11.45vw;
+  }
+}

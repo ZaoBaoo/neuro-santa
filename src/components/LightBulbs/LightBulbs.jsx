@@ -1,17 +1,13 @@
 import './LightBulbs.scss';
-import { useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const LightBulbs = () => {
-  const [action, setAction] = useState(false);
-
-  useEffect(() => {
-    setInterval(() => {
-      setAction((state) => !state);
-    }, 3000);
-  }, []);
+  const { ref, inView } = useInView({
+    threshold: 0.6,
+  });
 
   return (
-    <div className={`lightBulbs ${action ? 'lightBulbs_action' : ''}`}>
+    <div ref={ref} className={`lightBulbs ${inView ? 'lightBulbs_action' : ''}`}>
       <div className="lightBulbs__light-active" />
       <div className="lightBulbs__light-disabled" />
     </div>
