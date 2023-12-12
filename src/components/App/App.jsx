@@ -1,5 +1,5 @@
 import './App.scss';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // Components
@@ -14,6 +14,7 @@ import { getProductsAction, setCurrentProductAction } from '../../store/reducers
 import { scrollToBlock } from '../../utils/scrollToBlock.js';
 import { CardMobile } from '../CardMobile/CardMobile.jsx';
 import { CardGreeting } from '../CardGreeting/CardGreeting.jsx';
+import { LightBulbs } from '../LightBulbs/LightBulbs.jsx';
 
 const isMobile = window.innerWidth < 700;
 
@@ -58,6 +59,8 @@ function App() {
 
         {isFirstRender && <CardGreeting />}
       </Container>
+
+      <LightBulbs />
     </div>
   );
 }

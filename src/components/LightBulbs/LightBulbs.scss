@@ -1,0 +1,35 @@
+#root .lightBulbs {
+  position: relative;
+
+  &_action {
+    .lightBulbs__light-active {
+      opacity: 1;
+    }
+
+    .lightBulbs__light-disabled {
+      opacity: 0;
+    }
+  }
+
+  &__light-active,
+  &__light-disabled {
+    width: 100vw;
+    height: 24vw;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    transition: opacity 1s ease-in-out;
+  }
+
+  &__light-active {
+    background-image: url("https://www.technodom.kz/under/neuro-santa/light-bulbs-active.png");
+
+    opacity: 0;
+  }
+
+  &__light-disabled {
+    background-image: url("https://www.technodom.kz/under/neuro-santa/light-bulbs-disabled.png");
+  }
+}
