@@ -1,7 +1,13 @@
 export const productMatches = [
   {
     image: 'https://new.technodom.kz/under/neuro-santa/particle-tv.png',
-    categories: ['led-televizory', 'televizory-ot-61-djujmov', 'televizory-ot-51-do-60-djujmov'],
+    categories: [
+      'led-televizory',
+      'televizory-ot-61-djujmov',
+      'televizory-ot-51-do-60-djujmov',
+      'televizory-do-37-djujmov',
+      'televizory-ot-38-do-50-djujmov',
+    ],
   },
   {
     image: 'https://new.technodom.kz/under/neuro-santa/particle-laptop.png',
@@ -13,7 +19,6 @@ export const productMatches = [
       'vse-naushniki',
       'smartfony',
       'videoregistratory',
-      'jelektrosamokaty',
       'kombo-ustrojstva-gibridy',
       'smart-chasy',
       'mobil-nye-telefony',
@@ -31,6 +36,8 @@ export const productMatches = [
       'kondicionery',
       'indukcionnye-poverhnosti',
       'kondicionery-7000-9000-btu',
+      'sushil-nye-mashiny-i-barabany',
+      'televizory-ot-38-do-50-djujmov',
     ],
   },
   {
@@ -53,10 +60,15 @@ export const productMatches = [
       'miksery',
       'tostery',
       'kuhonnye-pribory',
+      'sokovyzhimalki',
     ],
   },
   {
-    image: 'https://new.technodom.kz/under/neuro-santa/particle-start.png',
+    image: 'https://new.technodom.kz/under/neuro-santa/particle-samakat.png',
+    categories: ['jelektrosamokaty'],
+  },
+  {
+    image: 'https://new.technodom.kz/under/neuro-santa/particle-toy.png',
     categories: [],
   },
 ];

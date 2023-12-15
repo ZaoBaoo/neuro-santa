@@ -12,8 +12,9 @@
   margin-top: 50px;
 
   @media (max-width: 700px) {
-    grid-template-columns: repeat(3, 31.6vw);
+    grid-template-columns: repeat(3, 26.38vw);
     gap: 2.2vw;
-    margin-top: 90px;
+    margin-top: 10px;
+    background-image: none;
   }
 }

@@ -14,7 +14,7 @@ const ButtonRipple = ({ flash, handlerNextProduct }) => {
     setIsButtonDisabled(true);
     setTimeout(() => {
       setIsButtonDisabled(false);
-    }, 4000);
+    }, 3000);
   };
 
   const handleHover = (e) => {

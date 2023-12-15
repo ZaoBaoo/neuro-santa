@@ -7,8 +7,13 @@ const PromoOnePlusOne = () => {
         <div className="promoOnePlusOne__content">
           <div className="promoOnePlusOne__right">
             <img
-              className="promoOnePlusOne__image"
-              src="https://www.technodom.kz/under/neuro-santa/promo-2.png"
+              className="promoOnePlusOne__image-main"
+              src="https://www.technodom.kz/under/neuro-santa/promo-2-part-1.png"
+              alt=""
+            />
+            <img
+              className="promoOnePlusOne__image-part"
+              src="https://www.technodom.kz/under/neuro-santa/promo-2-part-2.png"
               alt=""
             />
           </div>
@@ -18,10 +23,7 @@ const PromoOnePlusOne = () => {
               <p className="promoOnePlusOne__text">
                 Техника со скидками до 70%, с подарками за покупки и в рассрочку 0-0-24!
               </p>
-              <a
-                className="promoOnePlusOne__link"
-                href="https://www.technodom.kz/cms/promo/trojnaja-vygoda"
-              >
+              <a className="promoOnePlusOne__link" href="/promo/trojnaja-vygoda">
                 Подробнее
               </a>
             </div>

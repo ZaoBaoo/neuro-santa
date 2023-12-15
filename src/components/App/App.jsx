@@ -18,8 +18,11 @@ import { slicingProducts } from '../../utils/slicingProducts.js';
 import { getProductsAction, setCurrentProductAction } from '../../store/reducers/promocodes.js';
 import { Kaspi } from '../Kaspi/Kaspi.jsx';
 import { getCookie } from '../../utils/getCookies.js';
+import { MotionAnimate } from 'react-motion-animate';
 
 const isMobile = window.innerWidth < 700;
+
+let segmentSend = true;
 
 function App() {
   const [product, setProduct] = useState(null);
@@ -32,6 +35,14 @@ function App() {
     if (!getCookie('accessToken')) {
       window.signInHelper && window.signInHelper();
       return;
+    }
+
+    if (window.r46 && segmentSend) {
+      segmentSend = false;
+
+      r46('segment', 'add', {
+        segment_id: '10873',
+      });
     }
 
     setIsFirstRender(false);
@@ -73,9 +84,17 @@ function App() {
 
       <LightBulbs />
 
-      <PromoSale />
+      <div className="anchor-1" />
 
-      <PromoOnePlusOne />
+      <MotionAnimate animation="fadeInUp" reset={false} distance={200} delay={0.1} speed={1}>
+        <PromoSale />
+      </MotionAnimate>
+
+      <div className="anchor-2" />
+
+      <MotionAnimate animation="fadeInUp" reset={false} distance={200} delay={0.1} speed={1}>
+        <PromoOnePlusOne />
+      </MotionAnimate>
 
       <LightBulbs />
 

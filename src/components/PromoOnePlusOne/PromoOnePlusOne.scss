@@ -3,7 +3,7 @@
 
   background-image: url("https://www.technodom.kz/under/neuro-santa/promo-2-bg.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
 
   @media (max-width: 700px) {
@@ -19,6 +19,7 @@
 
   &__content {
     display: flex;
+    align-items: center;
     gap: 48px;
 
     @media (max-width: 700px) {
@@ -28,13 +29,61 @@
   }
 
   &__right {
-
+    position: relative;
   }
 
-  &__image {
+  &__image-main {
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  &__image-part {
+    width: 23.42%;
+    height: 56.49%;
+    display: block;
+
+    position: absolute;
+    top: 11%;
+    left: 31%;
+    transform-origin: bottom;
+    animation: growAnimation 12s ease-in-out forwards infinite alternate;
+  }
+
+  @keyframes growAnimation {
+    0% {
+      transform: scaleY(0) translateX(0);
+    }
+    10% {
+      transform: scaleY(1) translateX(0);
+    }
+    20% {
+      transform: scaleY(1) translateX(-5%);
+    }
+    30% {
+      transform: scaleY(1) translateX(5%);
+    }
+    40% {
+      transform: scaleY(1) translateX(-5%);
+    }
+    50% {
+      transform: scaleY(1) translateX(5%);
+    }
+    60% {
+      transform: scaleY(1) translateX(-5%);
+    }
+    70% {
+      transform: scaleY(1) translateX(5%);
+    }
+    80% {
+      transform: scaleY(1) translateX(-5%);
+    }
+    90% {
+      transform: scaleY(1) translateX(5%);
+    }
+    100% {
+      transform: scaleY(1) translateX(-5%);
+    }
   }
 
   &__left {
@@ -59,6 +108,7 @@
     gap: 40px;
 
     @media (max-width: 700px) {
+      align-items: center;
       gap: 14px;
     }
   }
@@ -83,6 +133,7 @@
 
     @media (max-width: 700px) {
       font-size: 14px;
+      text-align: center;
     }
   }
 

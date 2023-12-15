@@ -11,15 +11,30 @@ const PromoSale = () => {
               <p className="promoSale__text">
                 Скидки до 70% и рассрочка до 0-0-24 на желанную технику
               </p>
-              <a className="promoSale__link" href="https://www.technodom.kz/cms/sale">
+              <a className="promoSale__link" href="/sale">
                 Подробнее
               </a>
             </div>
           </div>
           <div className="promoSale__right">
             <img
-              className="promoSale__image"
-              src="https://www.technodom.kz/under/neuro-santa/promo-1.png"
+              className="promoSale__image-krug"
+              src="https://www.technodom.kz/under/neuro-santa/promo-1-krug.png"
+              alt=""
+            />
+            <img
+              className="promoSale__image-elka"
+              src="https://www.technodom.kz/under/neuro-santa/promo-1-elka.png"
+              alt=""
+            />
+            <img
+              className="promoSale__image-elka-light"
+              src="https://www.technodom.kz/under/neuro-santa/promo-1-elka-light.png"
+              alt=""
+            />
+            <img
+              className="promoSale__image-body"
+              src="https://www.technodom.kz/under/neuro-santa/promo-1-body.png"
               alt=""
             />
           </div>

@@ -1,6 +1,6 @@
 #root .cardGreeting {
   background-color: #FC6B3F;
-  margin-top: 64px;
+  margin-top: 40px;
   padding: 18px;
   border-radius: 16px;
   box-shadow: 0 2px 28px 0 #FFE1B5;
@@ -32,10 +32,10 @@
 
   &__image {
     display: block;
-    width: auto;
-    height: 262px;
+    width: 244px;
+    height: 327px;
     position: absolute;
-    bottom: -50px;
+    bottom: -100px;
     right: -12px;
   }
 }

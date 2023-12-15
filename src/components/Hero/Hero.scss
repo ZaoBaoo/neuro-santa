@@ -2,12 +2,12 @@
   position: relative;
   background-image: url("https://www.technodom.kz/under/neuro-santa/hero-bg-desktop.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center center, center center;
   transition: background 1s ease-in-out;
 
   &_ded {
-    background-position: center right -50px, center center;
+    //background-position: center right -50px, center center;
     background-image: url("https://www.technodom.kz/under/neuro-santa/hero-bg-ded-desktop.png"), url("https://www.technodom.kz/under/neuro-santa/hero-bg-desktop.png");
   }
 
@@ -59,8 +59,8 @@
     }
 
     @media (max-width: 700px) {
-      width: 66.66vw;
-      height: 66.66vw;
+      width: 47.2vw;
+      height: 47.2vw;
     }
   }
 
@@ -77,9 +77,9 @@
     z-index: 2;
 
     @media (max-width: 700px) {
-      background-position: top 5.3vw center;
-      width: 66.66vw;
-      height: 66.66vw;
+      background-position: top 4vw center;
+      width: 47.2vw;
+      height: 47.2vw;
     }
   }
 
@@ -91,7 +91,7 @@
     left: 0;
 
     @media (max-width: 700px) {
-      bottom: -10vw;
+      bottom: -7vw;
     }
   }
 
