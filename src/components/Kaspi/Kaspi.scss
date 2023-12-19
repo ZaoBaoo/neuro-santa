@@ -24,7 +24,11 @@
     top: 2.5vw;
     left: 15.6vw;
     z-index: 5;
-    animation: text-fade 10s ease-in-out forwards infinite alternate;
+    opacity: 0;
+
+    &_animation {
+      animation: text-fade 5s ease-in-out forwards alternate;
+    }
 
     @media (max-width: 700px) {
       width: 74.72vw;
@@ -38,7 +42,7 @@
     0% {
       opacity: 0;
     }
-    30% {
+    50% {
       opacity: 1;
     }
     100% {
@@ -54,7 +58,11 @@
     z-index: 6;
     top: 13.85vw;
     left: 42.44vw;
-    animation: left-fade 5s ease-in-out forwards infinite alternate;
+    opacity: 0;
+
+    &_animation {
+      animation: left-fade 5s ease-in-out forwards alternate;
+    }
 
     @media (max-width: 700px) {
       width: 55.55vw;

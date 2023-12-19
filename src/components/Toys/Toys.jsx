@@ -1,9 +1,10 @@
 import './Tays.scss';
 import { Toy } from '../Toy/Toy.jsx';
+import { forwardRef } from 'react';
 
-const Toys = () => {
+const Toys = forwardRef((props, ref) => {
   return (
-    <div className="toys">
+    <div className="toys" ref={ref}>
       <Toy
         image="https://www.technodom.kz/under/neuro-santa/toy-1.png"
         text="Новогодняя рассрочка"
@@ -23,6 +24,6 @@ const Toys = () => {
       />
     </div>
   );
-};
+});
 
 export { Toys };

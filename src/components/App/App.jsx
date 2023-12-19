@@ -20,6 +20,8 @@ import { Kaspi } from '../Kaspi/Kaspi.jsx';
 import { getCookie } from '../../utils/getCookies.js';
 import { MotionAnimate } from 'react-motion-animate';
 import { Accordions } from '../accordions/Accordions.jsx';
+import { MobileAnchor } from '../MobileAnchor/MobileAnchor.jsx';
+import { useInView } from 'react-intersection-observer';
 
 const isMobile = window.innerWidth < 700;
 
@@ -29,6 +31,9 @@ function App() {
   const [product, setProduct] = useState(null);
   const [isFirstRender, setIsFirstRender] = useState(true);
   const { currentProduct, products, cityId } = useSelector((state) => state.promocodesData);
+  const { ref, inView } = useInView({
+    threshold: 0.6,
+  });
 
   const dispatch = useDispatch();
 
@@ -81,7 +86,7 @@ function App() {
         </InnerCards>
       )}
 
-      <Toys />
+      <Toys ref={ref} />
 
       <LightBulbs />
 
@@ -102,6 +107,8 @@ function App() {
       <Kaspi />
 
       <Accordions />
+
+      <MobileAnchor inView={inView} />
     </div>
   );
 }

@@ -1,8 +1,13 @@
 import './Kaspi.scss';
+import { useInView } from 'react-intersection-observer';
 
 const Kaspi = () => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+  });
+
   return (
-    <div className="kaspi">
+    <div className="kaspi" ref={ref}>
       <picture>
         <source
           srcSet="https://www.technodom.kz/under/neuro-santa/kaspi-body-m.png"
@@ -21,7 +26,7 @@ const Kaspi = () => {
           media="(max-width: 700px)"
         />
         <img
-          className="kaspi__image-text"
+          className={`kaspi__image-text ${inView ? 'kaspi__image-text_animation' : ''}`}
           src="https://www.technodom.kz/under/neuro-santa/kaspi-text.png"
           alt=""
         />
@@ -33,7 +38,7 @@ const Kaspi = () => {
           media="(max-width: 700px)"
         />
         <img
-          className="kaspi__image-sany"
+          className={`kaspi__image-sany ${inView ? 'kaspi__image-sany_animation' : ''}`}
           src="https://www.technodom.kz/under/neuro-santa/kaspi-sany.png"
           alt=""
         />

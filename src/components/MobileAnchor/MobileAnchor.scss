@@ -1,0 +1,52 @@
+#root .mobileAnchor {
+  position: fixed;
+  bottom: 16px;
+  z-index: 200;
+  left: 50%;
+  //transition: opacity 2s ease-in-out;
+  transform: translateX(-50%);
+
+  padding: 12px 0;
+  border-radius: 12px;
+  background: linear-gradient(94deg, #FFC93D 0%, #FFA800 100%);
+  box-shadow: 0 2px 18px 0 #FFAA29;
+  width: 92%;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.24px;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  &_show {
+    display: none;
+
+    @media (max-width: 700px) {
+      display: flex;
+      animation: slideIn 1.5s ease;
+    }
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 9px;
+    background-image: url("https://www.technodom.kz/under/neuro-santa/arrow-up.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}

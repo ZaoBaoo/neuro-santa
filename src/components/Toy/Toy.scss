@@ -4,25 +4,26 @@
   gap: 16px;
   align-items: center;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
-  @media (max-width: 700px) {
-      gap: 8px;
-  }
+  &:hover {
+    .toy__text {
+      text-decoration: underline;
+    }
 
-  &__wrapper {
-    position: relative;
-    transition: transform 0.3s ease-in-out;
-    -webkit-tap-highlight-color: transparent;
-
-    &:hover {
+    .toy__wrapper {
       transform: translateY(-25px);
 
       .toy__decor-active {
         opacity: 1;
       }
     }
+  }
 
-    @media (max-width: 700px) {
+  @media (max-width: 700px) {
+    gap: 8px;
+
+    .toy__wrapper {
       &:hover {
         transform: translateY(0) scale(1.1);
 
@@ -31,6 +32,12 @@
         }
       }
     }
+  }
+
+  &__wrapper {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
   }
 
   &__image {
@@ -68,7 +75,6 @@
     font-size: 28px;
     font-weight: 900;
     letter-spacing: -0.577px;
-    text-decoration: underline;
     max-width: 290px;
 
     @media (max-width: 700px) {
