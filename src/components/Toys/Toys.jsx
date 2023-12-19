@@ -6,7 +6,7 @@ const Toys = () => {
     <div className="toys">
       <Toy
         image="https://www.technodom.kz/under/neuro-santa/toy-1.png"
-        text="Новогодняя Kaspi рассрочка"
+        text="Новогодняя рассрочка"
         selector=".kaspi"
       />
 

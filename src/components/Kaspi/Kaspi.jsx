@@ -42,9 +42,9 @@ const Kaspi = () => {
       <div className="kaspi__description">
         <p className="kaspi__text">
           Дни выгодного шопинга начинаются! Выбирай сертифицированную технику, покупай в рассрочку
-          на 24 месяца и наслаждайся покупкой без переплат. Ждём тебя с 15 по 18 декабря в магазинах
+          до 24 месяцев и наслаждайся покупкой без переплат.
         </p>
-        <a className="kaspi__link" href="/kaspi-friday">
+        <a className="kaspi__link" href="/credit">
           Подробнее
         </a>
       </div>

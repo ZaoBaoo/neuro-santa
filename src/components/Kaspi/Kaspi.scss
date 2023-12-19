@@ -17,8 +17,8 @@
   }
 
   &__image-text {
-    width: 33.1vw;
-    height: 22.4vw;
+    width: 35.57vw;
+    height: 16.87vw;
     display: block;
     position: absolute;
     top: 2.5vw;
@@ -27,8 +27,8 @@
     animation: text-fade 10s ease-in-out forwards infinite alternate;
 
     @media (max-width: 700px) {
-      width: 69.72vw;
-      height: 50.83vw;
+      width: 74.72vw;
+      height: 36.66vw;
       top: 7.77vw;
       left: 2.77vw;
     }

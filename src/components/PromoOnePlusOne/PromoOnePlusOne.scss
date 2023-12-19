@@ -52,10 +52,10 @@
 
   @keyframes growAnimation {
     0% {
-      transform: scaleY(0) translateX(0);
+      transform: scaleY(1) translateX(-5%);
     }
     10% {
-      transform: scaleY(1) translateX(0);
+      transform: scaleY(1) translateX(5%);
     }
     20% {
       transform: scaleY(1) translateX(-5%);
