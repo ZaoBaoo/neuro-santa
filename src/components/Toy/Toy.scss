@@ -1,8 +1,9 @@
 #root .toy {
   display: flex;
   flex-direction: column;
-  gap: 4.44vw;
+  gap: 16px;
   align-items: center;
+  cursor: pointer;
 
   @media (max-width: 700px) {
       gap: 8px;
@@ -10,7 +11,6 @@
 
   &__wrapper {
     position: relative;
-    cursor: pointer;
     transition: transform 0.3s ease-in-out;
     -webkit-tap-highlight-color: transparent;
 
@@ -68,6 +68,7 @@
     font-size: 28px;
     font-weight: 900;
     letter-spacing: -0.577px;
+    text-decoration: underline;
 
     @media (max-width: 700px) {
       font-size: 12px;

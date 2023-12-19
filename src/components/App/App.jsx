@@ -19,6 +19,7 @@ import { getProductsAction, setCurrentProductAction } from '../../store/reducers
 import { Kaspi } from '../Kaspi/Kaspi.jsx';
 import { getCookie } from '../../utils/getCookies.js';
 import { MotionAnimate } from 'react-motion-animate';
+import { Accordions } from '../accordions/Accordions.jsx';
 
 const isMobile = window.innerWidth < 700;
 
@@ -99,6 +100,8 @@ function App() {
       <LightBulbs />
 
       <Kaspi />
+
+      <Accordions />
     </div>
   );
 }
