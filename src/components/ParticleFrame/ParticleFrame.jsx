@@ -35,7 +35,7 @@ const ParticleFrame = () => {
   const [entropy, setEntropy] = useState(600);
   const [scale, setScale] = useState(1.5);
   const [srcImage, setSrcImage] = useState(
-    'https://new.technodom.kz/under/neuro-santa/particle-toy.png',
+    'https://new.technodom.kz/under/neuro-santa/particle-start.png',
   );
 
   const { currentProduct } = useSelector((state) => state.promocodesData);

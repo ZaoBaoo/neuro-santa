@@ -1,4 +1,5 @@
 import './PromoOnePlusOne.scss';
+import { LinkRipple } from '../LinkRipple/LinkRipple.jsx';
 
 const PromoOnePlusOne = () => {
   return (
@@ -23,9 +24,7 @@ const PromoOnePlusOne = () => {
               <p className="promoOnePlusOne__text">
                 Техника со скидками до 70%, с подарками за покупки и в рассрочку 0-0-24!
               </p>
-              <a className="promoOnePlusOne__link" href="/promo/trojnaja-vygoda">
-                Подробнее
-              </a>
+              <LinkRipple text="Подробнее" to="/promo/trojnaja-vygoda" />
             </div>
           </div>
         </div>

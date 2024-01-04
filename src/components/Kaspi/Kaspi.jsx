@@ -1,5 +1,6 @@
 import './Kaspi.scss';
 import { useInView } from 'react-intersection-observer';
+import { LinkRipple } from '../LinkRipple/LinkRipple.jsx';
 
 const Kaspi = () => {
   const { ref, inView } = useInView({
@@ -49,9 +50,7 @@ const Kaspi = () => {
           Дни выгодного шопинга начинаются! Выбирай сертифицированную технику, покупай в рассрочку
           до 24 месяцев и наслаждайся покупкой без переплат.
         </p>
-        <a className="kaspi__link" href="/credit">
-          Подробнее
-        </a>
+        <LinkRipple text="Подробнее" to="/credit" className={`kaspi__link`} />
       </div>
     </div>
   );

@@ -1,0 +1,135 @@
+#root .linkRipple {
+  --width: 100%;
+  --time: 0.7s;
+
+  border: none;
+  font-family: inherit;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+
+  color: white;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #FFF;
+  box-shadow: 0 5px 52px 0 #FFFBD4;
+  padding: 20px 32px;
+  transition: box-shadow 0.25s ease-in-out, opacity 0.25s ease-in-out;
+
+  @media (max-width: 700px) {
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 3px 18px 0 #FFF383;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  .linkRipple__text {
+    color: #FC6B3F;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: -0.48px;
+
+    position: relative;
+    z-index: 5;
+    transition: color var(--time);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &_magic {
+      &:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 26px;
+        background-image: url("https://www.technodom.kz/under/neuro-santa/magic-icon-orange.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        transition: background-image var(--time);
+
+        @media (max-width: 700px) {
+          width: 16px;
+          height: 14px;
+        }
+      }
+    }
+
+    @media (max-width: 700px) {
+      font-size: 12px;
+    }
+  }
+
+  &:hover {
+    @media (min-width: 700px) {
+      box-shadow: 0 5px 52px 0 #FFC700;
+    }
+  }
+
+  &:hover .linkRipple__text {
+    @media (min-width: 700px) {
+      color: #fff;
+    }
+  }
+
+  &:hover .linkRipple__text_magic {
+    @media (min-width: 700px) {
+      &:before {
+        background-image: url("https://www.technodom.kz/under/neuro-santa/magic-icon-white.svg");
+      }
+    }
+  }
+
+  span {
+    position: absolute;
+    display: block;
+    content: "";
+    z-index: 0;
+    width: 0;
+    height: 0;
+
+    border-radius: 100%;
+    background: linear-gradient(94deg, #FFC93D 0%, #FFA800 100%);
+
+    transform: translate(-50%, -50%);
+    transition: width var(--time), padding-top var(--time);
+  }
+
+  &:hover span {
+    @media (min-width: 700px) {
+      width: calc(var(--width) * 2.25);
+      padding-top: calc(var(--width) * 2.25);
+    }
+  }
+
+  &.FLASH {
+    &:hover .linkRipple__text {
+      color: white;
+    }
+
+    span {
+      background: #FFC700;
+    }
+  }
+
+  &.animated {
+    --angle: 5deg;
+    animation: shake 0.3s;
+  }
+}
+
+.link {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 1rem;
+}
