@@ -48,7 +48,7 @@ const Kaspi = () => {
       <div className="kaspi__description">
         <p className="kaspi__text">
           Дни выгодного шопинга начинаются! Выбирай сертифицированную технику, покупай в рассрочку
-          до 24 месяцев и наслаждайся покупкой без переплат.
+          до 15 месяцев и наслаждайся покупкой без переплат.
         </p>
         <LinkRipple text="Подробнее" to="/credit" className={`kaspi__link`} />
       </div>

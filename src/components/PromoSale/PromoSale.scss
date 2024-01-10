@@ -4,9 +4,10 @@
   background-image: url("https://www.technodom.kz/under/neuro-santa/promo-1-bg.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
+  background-position: top;
 
   @media (max-width: 700px) {
+    //background-image: none;
     height: auto;
   }
 

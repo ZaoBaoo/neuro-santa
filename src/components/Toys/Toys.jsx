@@ -13,7 +13,7 @@ const Toys = forwardRef((props, ref) => {
 
       <Toy
         image="https://www.technodom.kz/under/neuro-santa/toy-2.png"
-        text="Новогодняя распродажа"
+        text="Фейерверк скидок"
         selector=".anchor-1"
       />
 

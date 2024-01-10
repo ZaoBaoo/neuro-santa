@@ -22,7 +22,7 @@ const PromoOnePlusOne = () => {
             <div className="promoOnePlusOne__wrapper-text">
               <h2 className="promoOnePlusOne__title">TECHNO ВЫГОДА</h2>
               <p className="promoOnePlusOne__text">
-                Техника со скидками до 70%, с подарками за покупки и в рассрочку 0-0-24!
+                Техника со скидками до 50%, с подарками за покупки и в рассрочку 0-0-15!
               </p>
               <LinkRipple text="Подробнее" to="/promo/trojnaja-vygoda" />
             </div>
