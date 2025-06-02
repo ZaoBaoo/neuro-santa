@@ -46,7 +46,13 @@ const Hero = ({ handlerNextProduct }) => {
                   srcSet="https://www.technodom.kz/under/neuro-santa/sphere-decor.png"
                   media="(max-width: 700px)"
                 />
-                <img className="hero__sphere-decor" src="" alt="" width="" height="" />
+                <img
+                  className="hero__sphere-decor"
+                  src="https://www.technodom.kz/under/neuro-santa/sphere-decor.png"
+                  alt=""
+                  width=""
+                  height=""
+                />
               </picture>
 
               <ParticleFrame handlerNextProduct={handlerNextProduct} />

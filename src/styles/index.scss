@@ -1,7 +1,7 @@
-@import 'reset/fonts';
-@import 'reset/global-reset';
-@import 'reset/container-reset';
-@import 'reset/cms-reset';
+@use 'reset/fonts';
+@use 'reset/global-reset';
+@use 'reset/container-reset';
+@use 'reset/cms-reset';
 
 #root {
   background-color: #FC6B3F;

@@ -1,10 +1,11 @@
 import { Transition } from 'react-transition-group';
 import { transitionState } from '../utils/constants';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const withFade = (WrappedComponent) => {
   return (props) => {
     const [isShow, setIsShow] = useState(false);
+    const nodeRef = useRef(null);
 
     useEffect(() => {
       setTimeout(() => {
@@ -19,10 +20,11 @@ const withFade = (WrappedComponent) => {
     }, []);
 
     return (
-      <Transition in={isShow} timeout={transitionState.fadeDuration}>
+      <Transition in={isShow} timeout={transitionState.fadeDuration} nodeRef={nodeRef}>
         {(state) => (
           <WrappedComponent
             {...props}
+            ref={nodeRef}
             style={{
               ...transitionState.defaultFadeStyle,
               ...transitionState.transitionFadeStyles[state],
