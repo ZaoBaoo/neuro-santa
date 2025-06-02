@@ -20,12 +20,15 @@ export const getProducts = (cityId) => async (dispatch) => {
       dispatch(setCityIdAction(cityId));
 
       if (!cityId) {
+        document.querySelector('.app-test').textContent = 'ID города не найден';
         throw new Error('ID города не найден');
       }
     }
 
     // Получаем id города
     const promocodes = await api.getPromocodes(cityId);
+
+    console.log();
 
     // Достаем только sku
     const productsSkus = promocodes.map((item) => item.sku);
@@ -64,6 +67,7 @@ export const getProducts = (cityId) => async (dispatch) => {
     dispatch(setProductsRequestAction(false));
   } catch (e) {
     console.log(e);
+    document.querySelector('.app-test').textContent = e.message;
     // Вызвать попап с ошибкой
   }
 };

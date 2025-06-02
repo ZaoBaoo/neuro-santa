@@ -13,6 +13,7 @@
   border-radius: 24px;
   background: #FFF;
   box-shadow: 0 5px 52px 0 #FFFBD4;
+  min-width: 213px;
   padding: 20px 32px;
   transition: box-shadow 0.25s ease-in-out, opacity 0.25s ease-in-out;
 
@@ -20,11 +21,19 @@
     padding: 12px 16px;
     border-radius: 12px;
     box-shadow: 0 3px 18px 0 #FFF383;
-
+    min-width: initial;
   }
 
   &:disabled {
     cursor: not-allowed;
+
+    @media (min-width: 700px) {
+      .buttonRipple__text_magic {
+        &:before {
+          animation: pulse-rotate 1.5s infinite;
+        }
+      }
+    }
   }
 
   .buttonRipple__text {
@@ -38,6 +47,7 @@
     transition: color var(--time);
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
 
     &_magic {
@@ -64,17 +74,19 @@
     }
   }
 
-  &:hover {
-    box-shadow: 0 5px 52px 0 #FFC700;
-  }
+  @media (min-width: 700px) {
+    &:hover {
+      box-shadow: 0 5px 52px 0 #FFC700;
+    }
 
-  &:hover .buttonRipple__text {
-    color: #fff;
-  }
+    &:hover .buttonRipple__text {
+      color: #fff;
+    }
 
-  &:hover .buttonRipple__text_magic {
-    &:before {
-      background-image: url("https://www.technodom.kz/under/neuro-santa/magic-icon-white.svg");
+    &:hover .buttonRipple__text_magic {
+      &:before {
+        background-image: url("https://www.technodom.kz/under/neuro-santa/magic-icon-white.svg");
+      }
     }
   }
 
@@ -93,24 +105,26 @@
     transition: width var(--time), padding-top var(--time);
   }
 
-  &:hover span {
-    width: calc(var(--width) * 2.25);
-    padding-top: calc(var(--width) * 2.25);
-  }
-
-  &.FLASH {
-    &:hover .buttonRipple__text {
-      color: white;
+  @media (min-width: 700px) {
+    &:hover span {
+      width: calc(var(--width) * 2.25);
+      padding-top: calc(var(--width) * 2.25);
     }
 
-    span {
-      background: #FFC700;
-    }
-  }
+    &.FLASH {
+      &:hover .buttonRipple__text {
+        color: white;
+      }
 
-  &.animated {
-    --angle: 5deg;
-    animation: shake 0.3s;
+      span {
+        background: #FFC700;
+      }
+    }
+
+    &.animated {
+      --angle: 5deg;
+      animation: shake 0.3s;
+    }
   }
 }
 
@@ -119,4 +133,22 @@
   right: 10px;
   bottom: 10px;
   font-size: 1rem;
+}
+
+@keyframes pulse-rotate {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

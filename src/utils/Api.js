@@ -1,13 +1,18 @@
 import { BASE_URL } from './constants.js';
+import { productMock } from '../data/productMock.js';
 
 class Api {
   getPromocodes(cityId) {
-    return new Promise((resolve, reject) => {
-      fetch(`${BASE_URL}technodom/product/new_year_2023?city_id=${cityId}`)
-        .then((res) => res.json())
-        .then((data) => resolve(data))
-        .catch((err) => reject(err));
-    });
+    return productMock;
+    // return new Promise((resolve, reject) => {
+    //   fetch(`${BASE_URL}technodom/product/new_year_2023?city_id=${cityId}`)
+    //     .then((res) => {
+    //
+    //       res.json()
+    //     })
+    //     .then((data) => resolve(data))
+    //     .catch((err) => reject(err));
+    // });
   }
 
   getCityList() {

@@ -23,6 +23,12 @@ import { Accordions } from '../accordions/Accordions.jsx';
 import { MobileAnchor } from '../MobileAnchor/MobileAnchor.jsx';
 import { useInView } from 'react-intersection-observer';
 
+window.localStorage.setItem('locale', 'ru');
+window.localStorage.setItem(
+  'cityMagentoId',
+  JSON.stringify({ data: '10', expiration: 604800, createdAt: 1748789961090 }),
+);
+
 const isMobile = window.innerWidth < 700;
 
 let segmentSend = true;
@@ -38,18 +44,18 @@ function App() {
   const dispatch = useDispatch();
 
   const handlerNextProduct = () => {
-    if (!getCookie('accessToken')) {
-      window.signInHelper && window.signInHelper();
-      return;
-    }
+    // if (!getCookie('accessToken')) {
+    //   window.signInHelper && window.signInHelper();
+    //   return;
+    // }
 
-    if (window.r46 && segmentSend) {
-      segmentSend = false;
-
-      r46('segment', 'add', {
-        segment_id: '10873',
-      });
-    }
+    // if (window.r46 && segmentSend) {
+    //   segmentSend = false;
+    //
+    //   r46('segment', 'add', {
+    //     segment_id: '10873',
+    //   });
+    // }
 
     setIsFirstRender(false);
 
@@ -76,8 +82,8 @@ function App() {
 
   return (
     <div className="app">
+      <div className="app-test"></div>
       <Hero handlerNextProduct={handlerNextProduct} />
-
       {isMobile && (
         <InnerCards>
           {product && <CardMobile data={product} handlerNextProduct={handlerNextProduct} />}
@@ -85,29 +91,19 @@ function App() {
           {isFirstRender && <CardGreeting handlerNextProduct={handlerNextProduct} />}
         </InnerCards>
       )}
-
       <Toys ref={ref} />
-
       <LightBulbs />
-
       <div className="anchor-1" />
-
       <MotionAnimate animation="fadeInUp" reset={false} distance={200} delay={0.1} speed={1}>
         <PromoSale />
       </MotionAnimate>
-
       <div className="anchor-2" />
-
       <MotionAnimate animation="fadeInUp" reset={false} distance={200} delay={0.1} speed={1}>
         <PromoOnePlusOne />
       </MotionAnimate>
-
       <LightBulbs />
-
       <Kaspi />
-
       <Accordions />
-
       <MobileAnchor inView={inView} />
     </div>
   );

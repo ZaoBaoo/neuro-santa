@@ -33,9 +33,7 @@ export const productMatches = [
       'pylesosy',
       'kupol-nye-vytjazhki',
       'stiral-nye-mashiny',
-      'kondicionery',
       'indukcionnye-poverhnosti',
-      'kondicionery-7000-9000-btu',
       'sushil-nye-mashiny-i-barabany',
       'televizory-ot-38-do-50-djujmov',
     ],
@@ -62,6 +60,18 @@ export const productMatches = [
       'kuhonnye-pribory',
       'sokovyzhimalki',
     ],
+  },
+  {
+    image: 'https://new.technodom.kz/under/neuro-santa/particle-kbt.png',
+    categories: ['holodil-niki'],
+  },
+  {
+    image: './public/particle-videocard.png',
+    categories: ['videokarty'],
+  },
+  {
+    image: './public/particle-conditioner.png',
+    categories: ['kondicionery', 'kondicionery-7000-9000-btu'],
   },
   {
     image: 'https://new.technodom.kz/under/neuro-santa/particle-samakat.png',

@@ -44,7 +44,7 @@ const CardBase = ({ data }) => {
 
         <p className="card__description">{title}</p>
 
-        <a className="card__link" href={`https://www.technodom.kz/p/${uri}`} target="_blank">
+        <a className="card__link" href={`https://www.technodom.kz/p/${uri}`}>
           К товару
         </a>
       </div>

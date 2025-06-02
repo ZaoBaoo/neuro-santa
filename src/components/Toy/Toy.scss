@@ -8,11 +8,11 @@
 
   &:hover {
     .toy__text {
-      text-decoration: underline;
+      transform: scale(1.1);
     }
 
     .toy__wrapper {
-      transform: translateY(-25px);
+      transform: translateY(-15px) scale(1.05);
 
       .toy__decor-active {
         opacity: 1;
@@ -76,6 +76,7 @@
     font-weight: 900;
     letter-spacing: -0.577px;
     max-width: 290px;
+    transition: transform 0.3s ease-in-out;
 
     @media (max-width: 700px) {
       font-size: 12px;

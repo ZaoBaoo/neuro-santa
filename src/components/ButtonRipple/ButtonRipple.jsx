@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 const ButtonRipple = ({ flash, handlerNextProduct }) => {
   const [isAnimated, setAnimated] = useState(false);
-  const [isClick, setIsClick] = useState(false);
   const [isButtonPress, setIsButtonPress] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
@@ -12,6 +11,7 @@ const ButtonRipple = ({ flash, handlerNextProduct }) => {
     handlerNextProduct();
 
     setIsButtonDisabled(true);
+
     setTimeout(() => {
       setIsButtonDisabled(false);
     }, 3000);
@@ -57,7 +57,7 @@ const ButtonRipple = ({ flash, handlerNextProduct }) => {
     >
       <span></span>
       <div className={`buttonRipple__text ${isButtonPress ? 'buttonRipple__text_magic' : ''}`}>
-        {isButtonPress ? 'Повторить ' : 'Хочу волшебство! '}
+        {!isButtonPress ? 'Хочу волшебство!' : isButtonDisabled ? 'Генерируем' : 'Повторить'}
       </div>
     </button>
   );
