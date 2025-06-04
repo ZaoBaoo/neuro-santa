@@ -66,11 +66,11 @@ export const productMatches = [
     categories: ['holodil-niki'],
   },
   {
-    image: './public/particle-videocard.png',
+    image: './particle-videocard.png',
     categories: ['videokarty'],
   },
   {
-    image: './public/particle-conditioner.png',
+    image: './particle-conditioner.png',
     categories: ['kondicionery', 'kondicionery-7000-9000-btu'],
   },
   {
